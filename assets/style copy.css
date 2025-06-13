@@ -1,0 +1,24 @@
+:root {
+  --primary: #4081fb;
+  --sec: #ffaa00;
+  --main: #fff;
+  --main_light: #f8f9fa;
+  --main-transtion: 0.5s;
+}
+/* @font-face {
+      font-family: Rawy;
+      src: url("../../webfonts/ar/VIP-Rawy-Regular.ttf");
+      font-weight: normal;
+      font-style: normal;
+       font-display: swap;
+   } */
+/*  */
+
+body {
+  direction: rtl;
+}
+header nav img {
+  height: 40px;
+  width: 100%;
+  object-fit: contain;
+}
