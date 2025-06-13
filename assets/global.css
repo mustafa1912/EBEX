@@ -18,7 +18,9 @@
   font-style: normal;
   font-display: swap;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   direction: rtl;
 }
@@ -85,7 +87,7 @@ header nav img {
 
 @media (max-width: 768px) {
   .main-section .des {
-    width: 90% !important; 
+    width: 90% !important;
   }
   .button-animation-text,
   .button-animation-text-2,
