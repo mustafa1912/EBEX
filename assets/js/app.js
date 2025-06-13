@@ -7,19 +7,17 @@ $(".companys-section .owl-carousel").owlCarousel({
   autoplay: true,
   autoplayTimeout: 1000,
   autoplayHoverPause: true,
+  nav: false,
+  dots: false,
   responsive: {
     0: {
-      items: 1,
-      nav: true,
+      items: 2,
     },
     600: {
-      items: 3,
-      nav: false,
+      items: 4,
     },
     1000: {
-      items: 5,
-      nav: true,
-      loop: false,
+      items: 6,
     },
   },
 });
@@ -31,8 +29,8 @@ $(".projects-section .owl-carousel").owlCarousel({
   autoplay: true,
   autoplayTimeout: 5000,
   autoplayHoverPause: true,
-  nav: true,
-  dots: true,
+  nav: false,
+  dots: false,
   responsive: {
     0: {
       items: 1,

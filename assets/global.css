@@ -84,8 +84,24 @@ header nav img {
 }
 
 @media (max-width: 768px) {
-  .button-animation-text {
-    --fs-size: 1.5em;
+  .main-section .des {
+    width: 90% !important; 
+  }
+  .button-animation-text,
+  .button-animation-text-2,
+  .main-section .button-animation-text,
+  .main-section .button-animation-text {
+    --fs-size: 1.2em !important;
+  }
+  .message-vision .bg-vision-img,
+  .message-vision .bg-message-img {
+    height: 350px;
+  }
+  .areas-work-section .img {
+    height: 300px !important;
+  }
+  .cards {
+    transform: translateY(0%) !important;
   }
 }
 
