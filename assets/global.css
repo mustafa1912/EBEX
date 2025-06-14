@@ -226,10 +226,11 @@ header nav img {
   width: 100%;
   height: 100%;
   background-color: #00000063;
-  z-index: 0;
+  z-index: 2;
 }
+
 .main-section * {
-  z-index: 1;
+  z-index: 3;
 }
 .main-section .button-animation-text {
   --fs-size: 3em;
@@ -252,6 +253,26 @@ header nav img {
   height: 300px;
   border-radius: 50%;
 }
+
+.video-background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
 /* end main-section */
 
 /*  start message-vision*/
@@ -665,11 +686,13 @@ section .btn-submit:hover::after {
 .form-section .bg-white {
   background: white;
 }
-.form-section .img-social {
+.form-section .img-social,
+footer .img-social {
   width: 40px;
   height: 40px;
 }
-.form-section a {
+.form-section a,
+footer a {
   color: var(--primary);
 }
 .img-company {
@@ -679,3 +702,124 @@ section .btn-submit:hover::after {
   object-fit: contain;
 }
 /* end  form-section */
+
+/*  */
+/* From Uiverse.io by vinodjangid07 */
+/* From Uiverse.io by Gaurang7717 */
+
+footer {
+  background-color: #8bc0e01a;
+}
+.Btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  color: white;
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #00d757;
+  background: #00d757;
+  background: #00d757;
+  background: #00d757;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.BG.facebook {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #0077b5;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.BG.linkedin {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #0077b5;
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.BG.instagram {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
