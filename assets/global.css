@@ -36,9 +36,314 @@ p {
   font-size: 16px;
   line-height: 30px;
 }
+/* From Uiverse.io by Nawsome */
+.loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--main);
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.8s;
+}
+.loading img {
+  width: 150px;
+}
+.loadingspinner {
+  --square: 26px;
+  --offset: 30px;
+  /* --duration: 2.4s; */
+  --duration: 5s;
+  --delay: 0.2s;
+  --timing-function: ease-in-out;
+  --in-duration: 0.4s;
+  --in-delay: 0.1s;
+  --in-timing-function: ease-out;
+  width: calc(3 * var(--offset) + var(--square));
+  height: calc(2 * var(--offset) + var(--square));
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.loadingspinner div {
+  display: inline-block;
+  background: var(--primary);
+  /*background: var(--text-color);*/
+  /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
+  border: none;
+  border-radius: 2px;
+  width: var(--square);
+  height: var(--square);
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  font-size: 6pt;
+  color: black;
+}
+
+.loadingspinner #square1 {
+  left: calc(0 * var(--offset));
+  top: calc(0 * var(--offset));
+  animation: square1 var(--duration) var(--delay) var(--timing-function)
+      infinite,
+    squarefadein var(--in-duration) calc(1 * var(--in-delay))
+      var(--in-timing-function) both;
+}
+
+.loadingspinner #square2 {
+  left: calc(0 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square2 var(--duration) var(--delay) var(--timing-function)
+      infinite,
+    squarefadein var(--in-duration) calc(1 * var(--in-delay))
+      var(--in-timing-function) both;
+}
+
+.loadingspinner #square3 {
+  left: calc(1 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square3 var(--duration) var(--delay) var(--timing-function)
+      infinite,
+    squarefadein var(--in-duration) calc(2 * var(--in-delay))
+      var(--in-timing-function) both;
+}
+
+.loadingspinner #square4 {
+  left: calc(2 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square4 var(--duration) var(--delay) var(--timing-function)
+      infinite,
+    squarefadein var(--in-duration) calc(3 * var(--in-delay))
+      var(--in-timing-function) both;
+}
+
+.loadingspinner #square5 {
+  left: calc(3 * var(--offset));
+  top: calc(1 * var(--offset));
+  animation: square5 var(--duration) var(--delay) var(--timing-function)
+      infinite,
+    squarefadein var(--in-duration) calc(4 * var(--in-delay))
+      var(--in-timing-function) both;
+}
+
+@keyframes square1 {
+  0% {
+    left: calc(0 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+
+  8.333% {
+    left: calc(0 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  100% {
+    left: calc(0 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+}
+
+@keyframes square2 {
+  0% {
+    left: calc(0 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  8.333% {
+    left: calc(0 * var(--offset));
+    top: calc(2 * var(--offset));
+  }
+
+  16.67% {
+    left: calc(1 * var(--offset));
+    top: calc(2 * var(--offset));
+  }
+
+  25.00% {
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  83.33% {
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  91.67% {
+    left: calc(1 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+
+  100% {
+    left: calc(0 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+}
+
+@keyframes square3 {
+  0%,
+  100% {
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  16.67% {
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  25.00% {
+    left: calc(1 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+
+  33.33% {
+    left: calc(2 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+
+  41.67% {
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  66.67% {
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  75.00% {
+    left: calc(2 * var(--offset));
+    top: calc(2 * var(--offset));
+  }
+
+  83.33% {
+    left: calc(1 * var(--offset));
+    top: calc(2 * var(--offset));
+  }
+
+  91.67% {
+    left: calc(1 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+}
+
+@keyframes square4 {
+  0% {
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  33.33% {
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  41.67% {
+    left: calc(2 * var(--offset));
+    top: calc(2 * var(--offset));
+  }
+
+  50.00% {
+    left: calc(3 * var(--offset));
+    top: calc(2 * var(--offset));
+  }
+
+  58.33% {
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  100% {
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+}
+
+@keyframes square5 {
+  0% {
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  50.00% {
+    left: calc(3 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  58.33% {
+    left: calc(3 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+
+  66.67% {
+    left: calc(2 * var(--offset));
+    top: calc(0 * var(--offset));
+  }
+
+  75.00% {
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+
+  100% {
+    left: calc(2 * var(--offset));
+    top: calc(1 * var(--offset));
+  }
+}
+
+@keyframes squarefadein {
+  0% {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/*  */
 .owl-carousel * {
   direction: ltr;
   text-align: right;
+}
+.owl-carousel .button-animation-text,
+.owl-carousel .button-animation-text * {
+  direction: rtl;
+}
+
+.projects-section .owl-carousel .owl-nav,
+.areas-work-section .owl-carousel .owl-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.projects-section .owl-carousel .owl-nav button.owl-prev,
+.projects-section .owl-carousel .owl-nav button.owl-next,
+.areas-work-section .owl-carousel .owl-nav button.owl-prev,
+.areas-work-section .owl-carousel .owl-nav button.owl-next {
+  background: var(--primary);
+  height: 50px;
+  width: 100px;
+  border-radius: 4px;
+  color: var(--main);
+  text-align: center;
+  transform: 0.5s;
+}
+.projects-section .owl-carousel .owl-nav button:hover,
+.areas-work-section .owl-carousel .owl-nav button:hover {
+  background-color: var(--sec);
 }
 /* start navbar */
 header nav img {
@@ -290,9 +595,10 @@ header nav img {
   height: 450px;
 }
 .message-vision .img-icon {
-  width: 60px;
+  width: 60px !important;
   height: 60px;
   aspect-ratio: 1 / 1;
+  float: right;
 }
 .message-vision .des {
   position: relative;
@@ -408,6 +714,7 @@ header nav img {
   position: relative;
   overflow: hidden;
   transition: all 1s ease-in-out;
+  transform: translate(0%, -50%);
 }
 
 .content .logo .logo1 {
@@ -438,7 +745,7 @@ header nav img {
   margin-top: 30px;
   color: var(--main);
   font-size: 18px;
-  opacity: 0;
+  opacity: 1;
   letter-spacing: none;
   transition: all 0.5s ease-in-out 0.5s;
 }
@@ -463,10 +770,6 @@ header nav img {
   opacity: 1;
   transform: translateX(-50%);
   color: var(--main);
-}
-
-.card:hover .content .logo-bottom-text {
-  opacity: 1;
 }
 
 .card:hover .trail {
@@ -691,8 +994,7 @@ footer .img-social {
   width: 40px;
   height: 40px;
 }
-.form-section a,
-footer a {
+.form-section a {
   color: var(--primary);
 }
 .img-company {
@@ -708,7 +1010,11 @@ footer a {
 /* From Uiverse.io by Gaurang7717 */
 
 footer {
-  background-color: #8bc0e01a;
+  background-color: var(--primary);
+  color: var(--main);
+}
+footer a {
+  color: var(--main);
 }
 .Btn {
   width: 45px;
@@ -738,6 +1044,7 @@ footer {
   transition: all 0.3s;
   border: 1px solid rgba(156, 156, 156, 0.466);
   color: white;
+  z-index: 1;
 }
 
 .BG {
@@ -750,7 +1057,7 @@ footer {
   background: #00d757;
   background: #00d757;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  z-index: -1;
+  z-index: 0;
   border-radius: 9px;
   pointer-events: none;
   transition: all 0.3s;
@@ -762,7 +1069,6 @@ footer {
   height: 100%;
   background: #0077b5;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  z-index: -1;
   border-radius: 9px;
   pointer-events: none;
   transition: all 0.3s;
@@ -773,9 +1079,9 @@ footer {
   width: 100%;
   height: 100%;
   background: #0077b5;
-  z-index: -1;
   border-radius: 9px;
   pointer-events: none;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
   transition: all 0.3s;
 }
 .BG.instagram {
@@ -809,7 +1115,6 @@ footer {
     #bc1888 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  z-index: -1;
   border-radius: 9px;
   pointer-events: none;
   transition: all 0.3s;

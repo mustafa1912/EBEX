@@ -1,100 +1,105 @@
-$(".companys-section .owl-carousel").owlCarousel({
-  loop: true,
+// Hide the loader after 1 second
+setTimeout(() => {
+  document.querySelector(".loading").style.display = "none";
+}, 1000);
+
+// Reusable carousel initializer
+function initCarousel(selector, options) {
+  $(selector).owlCarousel({
+    loop: true,
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    nav: true,
+    dots: true,
+    ...options,
+  });
+}
+
+// Companys Carousel
+initCarousel(".companys-section .owl-carousel", {
   margin: 10,
-  responsiveClass: true,
-  loop: true,
-  margin: 10,
-  autoplay: true,
   autoplayTimeout: 1000,
-  autoplayHoverPause: true,
-  nav: false,
-  dots: false,
   responsive: {
-    0: {
-      items: 2,
-    },
-    600: {
-      items: 4,
-    },
-    1000: {
-      items: 6,
-    },
-  },
-});
-$(".projects-section .owl-carousel").owlCarousel({
-  loop: true,
-  margin: 20,
-  responsiveClass: true,
-  loop: true,
-  autoplay: true,
-  autoplayTimeout: 5000,
-  autoplayHoverPause: true,
-  nav: false,
-  dots: false,
-  responsive: {
-    0: {
-      items: 1,
-    },
-    600: {
-      items: 2,
-    },
-    1000: {
-      items: 3,
-    },
+    0: { items: 2, dots: false },
+    600: { items: 4, dots: false },
+    1000: { items: 6, dots: true },
   },
 });
 
-$(".play").on("click", function () {
+// Areas Work Carousel
+initCarousel(".areas-work-section .owl-carousel", {
+  margin: 20,
+  autoplayTimeout: 5000,
+  items: 1,
+  navText: ["<span>السابق</span>", "<span>التالي</span>"],
+  responsive: {
+    0: { dots: false },
+    600: { dots: false },
+    1000: { dots: true },
+  },
+});
+
+// Projects Carousel
+const owl = $(".projects-section .owl-carousel");
+initCarousel(owl, {
+  margin: 20,
+  autoplayTimeout: 5000,
+  navText: ["<span>السابق</span>", "<span>التالي</span>"],
+  responsive: {
+    0: { items: 1, dots: false },
+    600: { items: 2, dots: false },
+    1000: { items: 3, dots: true },
+  },
+});
+
+// Owl autoplay control
+$(".play").on("click", () => {
   owl.trigger("play.owl.autoplay", [1000]);
 });
-$(".stop").on("click", function () {
+$(".stop").on("click", () => {
   owl.trigger("stop.owl.autoplay");
 });
 
-// // // // // // // // // // // // // // // // //
-let nums = document.querySelectorAll(".nums .num");
-let section = document.querySelector(".experience-section");
-let started = false; // Function Started ? No
+// Animated Counter
+const nums = document.querySelectorAll(".nums .num");
+const section = document.querySelector(".experience-section");
+let started = false;
 
-window.onscroll = function () {
-  if (window.scrollY >= section.offsetTop - 400) {
-    if (!started) {
-      nums.forEach((num) => startCount(num));
-    }
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= section.offsetTop - 400 && !started) {
+    nums.forEach((num) => startCount(num));
     started = true;
   }
-};
+});
 
 function startCount(el) {
-  let goal = el.dataset.goal;
-  let count = setInterval(() => {
-    el.textContent++;
-    if (el.textContent == goal) {
-      clearInterval(count);
+  const goal = +el.dataset.goal;
+  let count = 0;
+  const increment = Math.ceil(goal / (3000 / 16)); // ~60fps
+  const update = () => {
+    count += increment;
+    if (count >= goal) {
+      el.textContent = goal;
+    } else {
+      el.textContent = count;
+      requestAnimationFrame(update);
     }
-  }, 3000 / goal);
+  };
+  update();
 }
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Bootstrap form validation
 (() => {
   "use strict";
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".needs-validation");
-
-  // Loop over them and prevent submission
   Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add("was-validated");
-      },
-      false
-    );
+    form.addEventListener("submit", (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add("was-validated");
+    });
   });
 })();
