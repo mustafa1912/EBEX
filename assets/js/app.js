@@ -1,6 +1,11 @@
 // Hide the loader after 1 second
-setTimeout(() => {
+// اقفل السكرول
+document.body.classList.add("no-scroll");
+
+// بعد 10 ثواني شيل اللودر وافتح السكرول
+setTimeout(function () {
   document.querySelector(".loading").style.display = "none";
+  document.body.classList.remove("no-scroll");
 }, 1000);
 
 // Reusable carousel initializer
@@ -20,9 +25,10 @@ function initCarousel(selector, options) {
 initCarousel(".companys-section .owl-carousel", {
   margin: 10,
   autoplayTimeout: 1000,
+  nav: false,
   responsive: {
     0: { items: 2, dots: false },
-    600: { items: 4, dots: false },
+    600: { items: 4, dots: true },
     1000: { items: 6, dots: true },
   },
 });

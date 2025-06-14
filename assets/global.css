@@ -37,6 +37,9 @@ p {
   line-height: 30px;
 }
 /* From Uiverse.io by Nawsome */
+body.no-scroll {
+  overflow: hidden;
+}
 .loading {
   width: 100%;
   height: 100%;
@@ -323,7 +326,15 @@ p {
 }
 
 .projects-section .owl-carousel .owl-nav,
-.areas-work-section .owl-carousel .owl-nav {
+.areas-work-section .owl-carousel .owl-nav,
+.owl-carousel .owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+ {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -344,6 +355,18 @@ p {
 .projects-section .owl-carousel .owl-nav button:hover,
 .areas-work-section .owl-carousel .owl-nav button:hover {
   background-color: var(--sec);
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: var(--sec);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.owl-carousel button.owl-dot.active {
+  background: var(--primary);
 }
 /* start navbar */
 header nav img {
